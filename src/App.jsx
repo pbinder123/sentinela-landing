@@ -6,9 +6,9 @@ export default function App() {
   const [email, setEmail] = useState("");
 
   const features = [
-    { title: "Crystal‑clear value", desc: "One focused promise, above the fold, with proof just below.", icon: CheckCircle2 },
-    { title: "Fast loading", desc: "Lean markup and media placeholders. Swap with your optimized assets.", icon: CheckCircle2 },
-    { title: "Trust elements", desc: "Logos, testimonials, and badges placed where they convert.", icon: CheckCircle2 },
+    { title: "Reduce shrink fast", desc: "AI flags suspicious gestures in real time so staff can intervene before checkout." },
+    { title: "No new cameras needed", desc: "Connect to your existing CCTV. Rollout in days, not months." },
+    { title: "Measurable ROI", desc: "Dashboards show prevented losses and staff response metrics." },
   ];
 
   const galleries = [
@@ -27,7 +27,7 @@ export default function App() {
       <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Brand" className="h-8 w-8 rounded-xl shadow" onError={(e)=>{e.currentTarget.style.display='none'}}/>
+            <img src="/logo-sentinela-gradient-light.png" alt="Sentinela" className="h-9 w-9 rounded-xl shadow" />
             <span className="font-semibold tracking-tight">SENTINELA</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -36,26 +36,26 @@ export default function App() {
             <a href="#gallery" className="hover:text-slate-900">Gallery</a>
             <a href="#contact" className="hover:text-slate-900">Contact</a>
           </nav>
-          <a href="#cta" className="inline-flex items-center gap-2 px-3 py-2 rounded-2xl bg-slate-900 text-white text-sm shadow-sm hover:shadow transition"><span>Get Started</span><ArrowRight size={16}/></a>
+          <a href="#cta" className="inline-flex items-center gap-2 px-3 py-2 rounded-2xl text-white text-sm shadow-sm hover:shadow transition bg-gradient-to-r from-[#00C5C5] via-[#2BD8C9] to-[#0052FF]"><span>Get Started</span><ArrowRight size={16}/></a>
         </div>
       </header>
 
       <section className="relative">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4 pt-16 pb-10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 pt-16 pb-12">
           <div className="flex flex-col justify-center">
-            <motion.h1 initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{duration:0.5}} className="text-4xl md:text-5xl font-semibold tracking-tight">
+            <motion.h1 initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{duration:0.5}} className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
               Computer-vision theft detection for retailers in Uruguay.
             </motion.h1>
             <p className="mt-4 text-slate-600 text-lg">
-              We bring Veesion’s proven AI to your store: real‑time detection, fewer losses, quick ROI. Local onboarding and support.
+              We bring Veesion’s proven AI to your store: real-time detection, fewer losses, quick ROI. Local onboarding and support.
             </p>
-            <div className="mt-6 flex items-center gap-3">
-              <a id="cta" href="#contact" className="px-5 py-3 rounded-2xl bg-slate-900 text-white shadow hover:shadow-lg transition inline-flex items-center gap-2">Request a demo <ArrowRight size={18}/></a>
+            <div className="mt-7 flex items-center gap-3">
+              <a id="cta" href="#contact" className="px-5 py-3 rounded-2xl text-white shadow hover:shadow-lg transition inline-flex items-center gap-2 bg-gradient-to-r from-[#00C5C5] via-[#2BD8C9] to-[#0052FF]">Request a demo <ArrowRight size={18}/></a>
               <a href="#video" className="px-5 py-3 rounded-2xl border border-slate-300 text-slate-700 hover:bg-white transition inline-flex items-center gap-2"><Play size={18}/> Watch how it works</a>
             </div>
-            <div className="mt-6 flex items-center gap-4 text-xs text-slate-500">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-500">
               <span>✅ Works with existing cameras</span>
-              <span>✅ No hardware lock‑in</span>
+              <span>✅ No hardware lock-in</span>
               <span>✅ Local support in Uruguay</span>
             </div>
           </div>
@@ -73,13 +73,9 @@ export default function App() {
       <section id="features" className="py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Why retailers choose Sentinela + Veesion</h2>
-          <p className="mt-2 text-slate-600">Three crisp benefits. Keep it outcome‑oriented and concrete.</p>
+          <p className="mt-2 text-slate-600">Three crisp benefits. Keep it outcome-oriented and concrete.</p>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {[
-              {title:'Reduce shrink fast', desc:'AI flags suspicious gestures in real time so staff can intervene politely before checkout.'},
-              {title:'No new cameras needed', desc:'Connect to your existing CCTV. Rollout in days, not months.'},
-              {title:'Measurable ROI', desc:'Dashboards show prevented losses and staff response metrics.'},
-            ].map((f, i) => (
+            {features.map((f, i) => (
               <motion.div key={i} initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4, delay:i*0.05}} className="p-6 rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm">
                 <CheckCircle2 className="mb-3" />
                 <h3 className="font-semibold">{f.title}</h3>
@@ -110,7 +106,7 @@ export default function App() {
       </section>
 
       <section id="gallery" className="py-16">
-        <div className="max-w-6xl mx_auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">See it in action</h2>
           <p className="mt-2 text-slate-600">Swap these with your product shots, demo GIFs, or short clips.</p>
           <div className="mt-8 grid md:grid-cols-3 gap-4">
@@ -145,7 +141,7 @@ export default function App() {
           <div className="p-6 rounded-3xl bg-white/5 ring-1 ring-white/10">
             <h3 className="font-semibold mb-3">What you get</h3>
             <ul className="space-y-2 text-sm text-slate-200">
-              <li>• Conversion‑focused hero layout</li>
+              <li>• Conversion-focused hero layout</li>
               <li>• Feature highlights & trust signals</li>
               <li>• Gallery with media placeholders</li>
               <li>• Lead capture (connect to your CRM or form backend)</li>
